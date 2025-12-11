@@ -1,8 +1,11 @@
 import './bootstrap';
 import { createApp } from 'vue';
 
-// メインコンポーネント
+import Header from './header.vue';
 import App from './app.vue';
 
+const header = createApp(Header)
 const app = createApp(App);
+
+header.mount('#header')
 app.mount('#app');

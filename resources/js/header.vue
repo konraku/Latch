@@ -1,11 +1,11 @@
 <template>
-    <header>
-        <div class="wrapper">
-            <div id="hamburguer">
-                
-            </div>
-        </div>
-  </header>
+  <div class="wrapper">
+
+      <div id="hamburguer"></div>
+      <div id="title"></div>
+      <div id="search"></div>
+
+  </div>
 </template>
 
 <script>

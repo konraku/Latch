@@ -1,36 +1,49 @@
 <template>
   <main>
     <div class="container">
-      <h1 class="titlecColor" >Latch</h1>
-      <p class="textColor" >スクレイピングアプリへようこそ</p>
+      <h1 id="titlecColor" >Latch</h1>
+      <p id="textColor" >スクレイピングアプリへようこそ</p>
 
       <div>
-        <input id="urlSearchInput" type="text" placeholder="Search or scan a URL"></input>
+        <form id="searchUrlForm">
+          <input id="searchUrlInput" type="text" placeholder="Search or scan a URL"></input>
+          <button id="searchUrlButton" type="submit">Search</button>
+        </form>
       </div>
-      
+      <!--
       <div>
         <input id="searchURL" type="text"></input>
       </div>
+      -->
     </div>
 
-    <div id="bodyContents">
-
+    <div class="container">
+      <div>
+      </div>
     </div>
+
   </main>
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 export default {
-  name: 'App'
+  name: 'App',
+  
+  setup() {
+    onMounted(() => {
+      document.title = 'Latch - Home';
+    });
+  }
 }
 </script>
 
 <style scoped>
-.titlecColor {
+#titlecColor {
     color: #76aaf8;
 }
 
-.textColor {
+#textColor {
     color: #EAEAEA;
     font-size: 14px;
 }
@@ -42,6 +55,7 @@ export default {
   text-align: center;
   font-family: Arial, sans-serif;
 }
+
 h1{
   margin: 0px auto;
   color: #4CAF50;
@@ -54,7 +68,7 @@ p {
   color: #555;
 }
 
-#urlSearchInput {
+#searchUrlInput {
   margin-top:25px;
 }
 </style>
