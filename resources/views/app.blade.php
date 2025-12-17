@@ -8,11 +8,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
 
-    <header>
-        <div id="header"></div>
-    </header>
-
     <body>
+        <header id="header"></header>
         <div id="app"></div>
     </body>
 

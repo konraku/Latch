@@ -1,28 +1,26 @@
 <template>
-  <main>
     <div class="container">
-      <h1 id="titlecColor" >Latch</h1>
-      <p id="textColor" >スクレイピングアプリへようこそ</p>
+      <div class="m-auto vstack gap-3">
 
-      <div>
-        <form id="searchUrlForm">
-          <input id="searchUrlInput" type="text" placeholder="Search or scan a URL"></input>
-          <button id="searchUrlButton" type="submit">Search</button>
-        </form>
+        <h1 id="titlecColor" class="m-0">Latch</h1>
+        <p id="textColor">
+          Welcome to Latch.<br></br>
+          This app organizes and saves images from a specified URL.
+        </p>
+
+        <div class="section-wrapper">
+          <form id="searchUrlForm" class="search vstack gap-4 align-items-center mx-2">
+            <input id="searchUrlInput" class="form-control" type="text" placeholder="Search"></input>
+            <button id="searchUrlButton" class="btn btn-outline-primary px-5" type="submit">Search</button>
+          </form>
+        </div>
       </div>
-      <!--
-      <div>
-        <input id="searchURL" type="text"></input>
-      </div>
-      -->
     </div>
 
     <div class="container">
       <div>
       </div>
     </div>
-
-  </main>
 </template>
 
 <script>
@@ -40,35 +38,51 @@ export default {
 
 <style scoped>
 #titlecColor {
-    color: #76aaf8;
+    color: #d62b53;
+    font-size: 5rem;
 }
 
 #textColor {
-    color: #EAEAEA;
+    color: #f0bc43;
     font-size: 14px;
 }
 
 .container {
   max-width: 800px;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 20px;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family:Arial, Helvetica, sans-serif
 }
 
-h1{
-  margin: 0px auto;
-  color: #4CAF50;
-  font-size: 5rem;
-}
-
-p {
-  margin:0px auto;
-  font-size: 1.2rem;
-  color: #555;
-}
-
+/* form */
 #searchUrlInput {
-  margin-top:25px;
+  border-color: #b8b7b7;
+  background-color: #151518;
+  color: #ffffff;
 }
+#searchUrlInput::placeholder {
+  color:#878787;
+}
+#searchUrlInput:focus{
+  border-color: #d62b53;
+  box-shadow: none;
+}
+#searchUrlInput:hover{
+  color: #ffffff;
+  border-color: #d62b53;
+}
+
+/* btn */
+#searchUrlButton {
+  border-radius: 10px;
+  border-color: #f3f3f3;
+  color: #d62b53;
+}
+#searchUrlButton:hover {
+  background-color: #d62b53;
+  color: #ffffff;
+  border-color: #d62b53;
+}
+
 </style>
