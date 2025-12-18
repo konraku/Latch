@@ -4,34 +4,47 @@
 
         <h1 id="titlecColor" class="m-0">Latch</h1>
         <p id="textColor">
-          Welcome to Latch.<br></br>
-          This app organizes and saves images from a specified URL.
+          Welcome to Latch.<br>
+          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
         </p>
 
         <div class="section-wrapper">
-          <form id="searchUrlForm" class="search vstack gap-4 align-items-center mx-2">
-            <input id="searchUrlInput" class="form-control" type="text" placeholder="Search"></input>
+          <form @submit.prevent="handleSearch" id="searchUrlForm" class="search vstack gap-4 align-items-center mx-2">
+
+            <input v-model="url" id="searchUrlInput" class="form-control" type="text" placeholder="Search a URL"></input>
             <button id="searchUrlButton" class="btn btn-outline-primary px-5" type="submit">Search</button>
+
           </form>
         </div>
       </div>
-    </div>
 
-    <div class="container">
-      <div>
-      </div>
+      <p id="textColor" style="padding-top: 30px;">
+          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+      </p>
     </div>
+      <!--img / svg / 保存した画像-->
+      <!--omnibar予定地-->
 </template>
 
 <script>
 import { ref, onMounted } from 'vue';
 export default {
-  name: 'App',
+  name: 'Main',
   
   setup() {
     onMounted(() => {
       document.title = 'Latch - Home';
     });
+
+    const url = ref('');
+    const handleSearch = () => {
+      console.log('入力されたURL:', url.value);
+    };
+
+    return {
+      url,
+      handleSearch
+    };
   }
 }
 </script>
@@ -49,7 +62,7 @@ export default {
 
 .container {
   max-width: 800px;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 20px;
   text-align: center;
   font-family:Arial, Helvetica, sans-serif

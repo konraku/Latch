@@ -10,6 +10,19 @@ body {
 }
 
 header {
-  height: 64px;
+  height: 3.7%;
   flex-shrink: 0;
+  border-bottom: 1px solid #3a3a3d;
+  background-color: #403e3d;
+}
+
+main {
+  height: 100%;
+}
+
+footer {
+  height: 2%;
+  flex-shrink: 0;
+  border-bottom: 1px solid #3a3a3d;
+  background-color: #403e3d;
 }

@@ -10,7 +10,8 @@
 
     <body>
         <header id="header"></header>
-        <div id="app"></div>
+        <main id="main"></main>
+        <footer id="footer"></footer>
     </body>
 
 </html>

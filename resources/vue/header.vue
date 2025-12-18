@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper px-3">
 
     <div id="hamburguer"></div>
     <div id="title"></div>
@@ -15,4 +15,10 @@ export default {
 </script>
 
 <style>
+.wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 </style>
