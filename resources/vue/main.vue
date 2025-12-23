@@ -1,13 +1,15 @@
 <template>
     <div class="container">
-      <div class="m-auto vstack gap-3">
 
+      <div class="m-auto vstack gap-1">
         <h1 id="titlecColor" class="m-0">Latch</h1>
         <p id="textColor">
           Welcome to Latch.<br>
           xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.
         </p>
+      </div>
 
+      <div class="m-auto vstack gap-3">
         <div class="section-wrapper">
           <form @submit.prevent="handleSearch" id="searchUrlForm" class="search vstack gap-4 align-items-center mx-2">
 
@@ -17,13 +19,11 @@
           </form>
         </div>
       </div>
-
-      <p id="textColor" style="padding-top: 30px;">
-          xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-      </p>
     </div>
-      <!--img / svg / 保存した画像-->
-      <!--omnibar予定地-->
+
+    <div class="container">
+      <!--omnibar予定地(img / svg / 保存した画像(キャッシュ/保存))-->
+    </div>
 </template>
 
 <script>
@@ -37,8 +37,16 @@ export default {
     });
 
     const url = ref('');
+    /*
     const handleSearch = () => {
       console.log('入力されたURL:', url.value);
+    };
+    */
+    const handleSearch = async () => {
+    const res = await axios.post('http://localhost:8000/api/scrape', {
+        url: url.value
+      });
+      console.log(res.data);
     };
 
     return {
