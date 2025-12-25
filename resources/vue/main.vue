@@ -37,20 +37,37 @@ export default {
     });
 
     const url = ref('');
-    /*
-    const handleSearch = () => {
-      console.log('入力されたURL:', url.value);
-    };
-    */
+    const loading = ref(false);
+    const error = ref('');
+
     const handleSearch = async () => {
-    const res = await axios.post('http://localhost:8000/api/scrape', {
-        url: url.value
-      });
-      console.log(res.data);
+      // 空欄チェック
+      if(!url.value.trim()){
+        return;
+      }
+
+      // 成否判定
+      loading.value = true;
+      error.value = '';
+
+      try {
+        const res = await axios.post('/api/scrape', {
+          url: url.value
+        });
+        console.log('成功:', res.data);
+      }
+      catch (err) {
+        console.log('エラー:', err);
+      }
+      finally {
+        loading.value = false;
+      }
     };
 
     return {
       url,
+      loading,
+      error,
       handleSearch
     };
   }
