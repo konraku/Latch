@@ -64,6 +64,7 @@ export default {
       }
     };
 
+    //htmlに返している
     return {
       url,
       loading,
